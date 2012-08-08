@@ -111,6 +111,14 @@ jQuery(function  ($) {
 		portfolio.camera.position.x = e.pageX - ($(this).width() / 2);
 		portfolio.camera.position.y = e.pageY - ($(this).height() / 2);
 	});
+
+	$(window).keydown(function  (e) {
+	        if(e.keyCode == 87) {
+		  portfolio.camera.position.z -= 100;
+		} else if(e.keyCode == 83) {
+		  portfolio.camera.position.z += 100;
+		}
+	});
 	
 	$(window).unload(function  () {
 		portfolio.quit();
